@@ -1,0 +1,9 @@
+@font-face {
+    font-display: swap;
+    font-family: 'ogelic-cufonfonts';
+    src: 
+        local('ogelic-cufonfonts')
+        url(../fonts/OgelicRegular-rg1B9.ttf) format('ttf');
+    font-style: normal;
+    font-display: swap;
+}

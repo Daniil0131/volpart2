@@ -1,0 +1,8 @@
+:root {
+    --background-main: url(../image/background_main.jpg);
+    --background-filter: .6;
+    --font-text: 'ogelic-cufonfonts';
+    --text-size: 20px;
+    --text-color-main: #8c680c;
+    --text-color-usual: black;
+}
