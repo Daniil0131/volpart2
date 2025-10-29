@@ -1,4 +1,4 @@
 import { defineConfig } from 'vite'
 export default defineConfig({
-  base: '/volpart/'  // имя репозитория
+  base: '/volpart.ru/'  // имя репозитория
 })
