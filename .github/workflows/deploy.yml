@@ -21,23 +21,38 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Debug tree (root)
+      - name: Detect project directory
+        id: detect
+        shell: bash
         run: |
-          echo "CWD:" && pwd
-          echo "Root files:" && ls -la
-          echo "Find lock files:" && find . -maxdepth 3 -name "package-lock.json" -o -name "npm-shrinkwrap.json" -o -name "yarn.lock" -print
+          echo "PWD: $(pwd)"
+          echo "Tree (top level):"
+          ls -la
+          echo "Searching for package.json..."
+          DIR="$(find . -maxdepth 3 -type f -name package.json -printf '%h\n' | head -n1)"
+          if [ -z "$DIR" ]; then
+            echo "No package.json found within 3 levels. Failing."
+            exit 1
+          fi
+          echo "Found package.json in: $DIR"
+          echo "PACKAGE_DIR=$DIR" >> "$GITHUB_ENV"
+          echo "Contents of $DIR:"
+          ls -la "$DIR"
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
+          # кэш привязываем к lock-файлу в найденной папке
           cache-dependency-path: |
-            **/package-lock.json
-            **/npm-shrinkwrap.json
-            **/yarn.lock
+            ${{ env.PACKAGE_DIR }}/package-lock.json
+            ${{ env.PACKAGE_DIR }}/npm-shrinkwrap.json
+            ${{ env.PACKAGE_DIR }}/yarn.lock
 
       - name: Install dependencies (ci or install)
+        working-directory: ${{ env.PACKAGE_DIR }}
+        shell: bash
         run: |
           if [ -f package-lock.json ]; then
             echo "Lockfile found → npm ci"
@@ -48,12 +63,13 @@ jobs:
           fi
 
       - name: Build
+        working-directory: ${{ env.PACKAGE_DIR }}
         run: npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: ${{ env.PACKAGE_DIR }}/dist
 
   deploy:
     needs: build
