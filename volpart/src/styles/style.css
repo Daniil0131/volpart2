@@ -19,6 +19,10 @@ body {
   	width: 100px;
 	border-radius: 10%;
 	border: 3px solid black;
+	transition: border 0.5s ease;
+}
+.header_logo-image:hover {
+	border-color:#ffed39;
 }
 .header_list {
 	display: flex;
