@@ -23,7 +23,9 @@ jobs:
 
       - name: Debug tree
         run: |
+          echo "Working dir:"
           pwd
+          echo "Repo root:"
           ls -la
 
       - name: Setup Node
@@ -31,8 +33,9 @@ jobs:
         with:
           node-version: 20
           cache: npm
+          cache-dependency-path: package-lock.json
 
-      - name: Install deps
+      - name: Install dependencies
         run: npm ci
 
       - name: Build
