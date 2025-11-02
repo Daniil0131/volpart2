@@ -120,11 +120,13 @@ body {
 
 .apartment {
 	display: grid;
-	grid-template-rows: 1fr 3fr;
+	grid-template-rows: 1fr 5fr;
 	background-color:aliceblue;
 	height: 100vh;
-	padding: 30px;
+	padding: 30px 30px 0 30px;
 }
+
+
 .apartment_title {
 	justify-self: center;
 	align-self: center;
@@ -135,11 +137,11 @@ body {
 }
 .apartment_list {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-between;
-	gap: 40px;
 	list-style: none;
 	justify-self: center;
-	
+	gap: 40px;
 }
 
 .for_lazy-loading-off {
@@ -148,17 +150,22 @@ body {
 .for_lazy-loading-on {
 	opacity: 1;
 }
+.list_item {
+	width: 500px;
+	height: 307px;	
+}
 .article {
 	display: grid;
 	grid-template-columns: 1fr 55%;
-	width: 500px;
-	height: 307px;
 	padding: 20px;
+	width: 100%;
+	height: 100%;
 	border-radius: 25px;
 	background-color: rgb(228, 230, 99);
 	box-shadow: -7px 7px 0 2px black;
 	transition: all 0.5s ease;
 }
+
 .article:hover {
 	transform: scale(1.05);	
 	box-shadow: -14px 14px 0 2px black;
@@ -172,7 +179,6 @@ body {
 	overflow: hidden;
 	background: url(../image/img/apartment_1/outside_window_apartment_1.jpg) center center/cover no-repeat;
 	border-radius: 10%;
-	filter: brightness(65%);
 	box-shadow: -3px 3px 0 2px black;
 }
 .article_list-item {
@@ -183,7 +189,6 @@ body {
 	object-fit: cover;
 	opacity: 0;
 	animation: fade 36s infinite;
-	filter: brightness(65%);
 }
 .article_title {
 	font-family: var(--font-text, sans-serif);
@@ -254,7 +259,69 @@ body {
 	z-index: 20;
 	transition: all 0.5s ease;
 }
+.apartment_arrow_button {
+	grid-row: 3/4;
+	grid-column: 1/2;
+	justify-self: center;
+	width: 100px;
+	background: transparent;
+	filter: invert(100%);
+	transform: rotate(180deg);
+	border: none;
+	transition: all 0.5s ease;
 
+}
+.apartment_arrow_button:hover {
+	filter: invert(50%);
+}
+.apartment_arrow_button-rotate {
+	transform: rotate(0deg);
+}
+.apartment_arrow {
+	width: 100%;
+}
+.apartment_add-sect {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	align-items: start;
+	position: relative;
+	background-color:aliceblue;
+	min-height: 0;
+	padding: 30px;
+}
+.apartment_add-sect::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	display: block;
+	width: 100%;
+	height: 5px;
+	background-color: #000;
+	transform-origin: center;
+	transform: scaleX(0);
+	
+}
+.apartment_list-second {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	list-style: none;
+	justify-self: center;
+	gap: 40px;
+}
+.apartment_add-sect.apartment_add::after {
+	animation: apartment_after-on 1s forwards;
+}
+.apartment_add-sect.apartment_remove::after {
+	animation: apartment_after-off 1s forwards;
+}
+.apartment_add {
+	animation: apartment_add .5s ease-in-out forwards;
+}
+.apartment_remove {
+	animation: apartment_remove .5s ease-in-out forwards;
+}
 .footer {
 	width: 100%;
 	min-height: 150px;

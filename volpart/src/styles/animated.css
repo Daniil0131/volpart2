@@ -32,3 +32,36 @@
   10%,  30%  { opacity: 1; }
   32%, 100%  { opacity: 0; }
 }
+@keyframes apartment_add {
+    0% {
+        
+    }
+    100% {
+        min-height: 1900px;
+    }
+}
+@keyframes apartment_remove {
+    0% {
+        min-height: 1900px;
+    }
+    100% {
+        
+    }
+}
+
+@keyframes apartment_after-on {
+    0% {
+        
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+@keyframes apartment_after-off {
+    0% {
+        transform: scaleX(1);
+    }
+    100% {
+        
+    }
+}
