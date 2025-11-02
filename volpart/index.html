@@ -24,25 +24,82 @@
     <meta name="theme-color" content="#ffffff">
   </head>
   <body>
+    <div class="main_div"></div>
 		<header id="header" class="header">
-			<a href="#index.html">
-				<img class="header_logo-image" src="./src/image/logo/logo.jpg" alt="">
+      		<a href="#index.html">
+				<img loading="lazy" class="header_logo-image" src="./src/image/logo/logo.jpg" alt="logo">
 			</a>
-			<ul class="header_list">
-				<li class="header_list-item"><a class="link" href="#header">Главная</a></li>
-				<li class="header_list-item"><a class="link" href="#header">Апартаменты</a></li>
-				<li class="header_list-item"><a class="link" href="#header">Контакты</a></li>
-			</ul>
-			<address class="header_address">
-				<a class="link header_link" href="tel:#">+7 952 345-43-09</a>
-				<a class="link header_link" href="mailto:#">ggsel.gmail.com</a>
-			</address>
+      		<a class="title" href="#index.html">
+				<h1>VOLPART</h1>
+			</a>
 		</header>
 		<main class="main">
-
+      		<section class="about">
+        		<h2 class="about_title for_lazy-loading-off">О нас</h2>
+        			<p loading="lazy" class="about_text for_lazy-loading-off">
+						Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
+						Aenean commodo ligula eget dolor. Aenean massa. 
+						Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+						Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. 
+						Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. 
+						In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. 
+						Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. 
+						Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,
+        			</p>
+      		</section>
+      		<section class="apartment ">
+				<h3 class="apartment_title for_lazy-loading-off">Апартаменты</h3>
+				<ul class="apartment_list">
+					<li class="list_item">
+						<article class="article for_lazy-loading-off">
+							<div class="article_list">
+								<img class="article_list-item" src="./src/image/img/apartment_1/outside_window_apartment_1.jpg" alt="apartment_outside">
+								<img class="article_list-item" src="./src/image/img/apartment_1/room_apartment_1(2).jpg" alt="apartment">
+								<img class="article_list-item" src="./src/image/img/apartment_1/room_apartment_1(3).jpg" alt="apartment">
+								<img class="article_list-item" src="./src/image/img/apartment_1/room_apartment_1(4).jpg" alt="apartment">
+								<img class="article_list-item" src="./src/image/img/apartment_1/room_apartment_1(5).jpg" alt="apartment">
+								<img class="article_list-item" src="./src/image/img/apartment_1/room_apartment_1(6).jpg" alt="apartment">
+								<img class="article_list-item" src="./src/image/img/apartment_1/room_apartment_1(7).jpg" alt="apartment">
+								<img class="article_list-item" src="./src/image/img/apartment_1/room_apartment_1(8).jpg" alt="apartment">
+								<img class="article_list-item" src="./src/image/img/apartment_1/room_apartment_1(9).jpg" alt="apartment">
+							</div>
+							<h4 class="article_title">Название</h4>
+							<p class="article_text">
+								Описание
+							</p>
+							<button class="article_button button">
+								<span class="button_text">Забронировать</span>
+							</button>
+						</article>
+					</li>
+					<li loading="lazy" class="list_item numder_two">
+						<article class="article for_lazy-loading-off">
+							<div class="article_list">
+								<img class="article_list-item" src="./src/image/img/apartment_2/outside_window_apartment_2.jpg" alt="apartment_outside">
+								<img class="article_list-item" src="./src/image/img/apartment_2/room_apartment_2(1).jpg" alt="apartment_1">
+								<img class="article_list-item" src="./src/image/img/apartment_2/room_apartment_2(2).jpg" alt="apartment_2">
+								<img class="article_list-item" src="./src/image/img/apartment_2/room_apartment_2(3).jpg" alt="apartment_3">
+								<img class="article_list-item" src="./src/image/img/apartment_2/room_apartment_2(4).jpg" alt="apartment_4">
+								<img class="article_list-item" src="./src/image/img/apartment_2/room_apartment_2(5).jpg" alt="apartment_5">
+								<img class="article_list-item" src="./src/image/img/apartment_2/room_apartment_2(6).jpg" alt="apartment_6">
+								<img class="article_list-item" src="./src/image/img/apartment_2/room_apartment_2(7).jpg" alt="apartment_7">
+								<img class="article_list-item" src="./src/image/img/apartment_2/room_apartment_2(8).jpg" alt="apartment_8">
+							</div>
+							<h4 class="article_title">Название</h4>
+							<p class="article_text">
+								Описание
+							</p>
+							<button class="article_button button">
+								<span class="button_text">Забронировать</span>
+							</button>
+						</article>
+					</li>
+					
+				</ul>
+	  		</section>
 		</main>
 		<footer class="footer">
-
+			
 		</footer>
     <script type="module" src="/src/main.js"></script>
   </body>

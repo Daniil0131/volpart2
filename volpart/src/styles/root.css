@@ -1,8 +1,11 @@
 :root {
     --background-main: url(../image/background_main.jpg);
-    --background-filter: .6;
+    --background-filter: .3;
     --font-text: 'ogelic-cufonfonts';
     --text-size: 20px;
     --text-color-main: #8c680c;
     --text-color-usual: black;
+    --text-main: rgb(38, 40, 2);
+    --font-text: 'ogelic-cufonfonts';
+    --text-color-about: aliceblue;
 }
