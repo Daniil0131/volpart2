@@ -73,6 +73,9 @@
     .apartment_arrow_button-down {
         height: 200px;
     }
+    .article_text {
+        font-size: 40px;
+    }
     @keyframes mobile_title {
         0% {
 
