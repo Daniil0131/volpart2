@@ -2,6 +2,7 @@ import './styles/global.css'
 import './styles/style.css'
 import './styles/root.css'
 import './styles/animated.css'
+import './styles/mobile.css'
 import './image/background_main.jpg'
 import { lazy_loading_down } from './lazy-loading'
 import { lazy_loading_up } from './lazy-loading'
@@ -19,6 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const apartment_add_sect = document.querySelector('.apartment_add-sect');
     const section_main = document.querySelector(".apartment_list");
     const section_second = document.querySelector(".apartment_list-second");
+    const apartment_arrow_button_down = document.querySelector('.apartment_arrow_button-down')
+    const button = document.querySelector('.apartment_arrow_button-down');
 
     lazy_loading_down().observe(logo);
     const tar = lazy_loading_up()
@@ -43,15 +46,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }, index * 100)
     })
     
+    
+
     apartment_arrow_button.addEventListener('click', (e) => {
         const el = apartment_add_sect;
         if (el.classList.contains('apartment_add')) {
             el.classList.remove('apartment_add');
             el.classList.add('apartment_remove');
+            button.style.display = 'none';
         } else {
             el.classList.remove('apartment_remove');
             el.classList.add('apartment_add');
         }
+
         apartment_arrow_button.classList.toggle('apartment_arrow_button-rotate');
         if(el.classList.contains('apartment_add')) {
             setTimeout(() => {
@@ -65,13 +72,32 @@ document.addEventListener('DOMContentLoaded', () => {
                         )
                     }, index * 100)
                 })
-            }) 
+            }, 500);
+            setTimeout(() => {
+                apartment_arrow_button_down.style.display = 'block'
+                lazy_loading_up().observe(apartment_arrow_button_down);
+            }, 500);
         }
         if(el.classList.contains('apartment_remove')) {
-            const section_down = document.querySelector('.apartment_list-second');
+            const section_down = apartment_add_sect.querySelector('.apartment_list-second');
             section_down.replaceChildren();
             
         }
     })
+
     
+    apartment_arrow_button_down.addEventListener('click', () => {
+        const el = apartment_add_sect;
+        if (el.classList.contains('apartment_add')) {
+            el.classList.remove('apartment_add');
+            el.classList.add('apartment_remove');
+            const section_down = apartment_add_sect.querySelector('.apartment_list-second');
+            const button = apartment_add_sect.querySelector('.apartment_arrow_button-down');
+            section_down.replaceChildren();
+            button.style.display = 'none';
+        }
+    })
 });
+// 1. Подправить стиль сайта (подробности в гс)
+// 2. Адаптив первой страницы
+// 3. Добавить под страницы

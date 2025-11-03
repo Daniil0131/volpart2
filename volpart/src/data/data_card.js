@@ -50,5 +50,35 @@ export const data_second = [
                 as: 'url'
                 })
         )
+    },
+    {
+        title_flat: "Квартира-студия_4",
+        description_flat: "Address_4",
+        imageUrls_flat: Object.values(
+            import.meta.glob('../image/img/apartment_5/*.{png,jpg,jpeg,svg}', {
+                eager: true,
+                as: 'url'
+                })
+        )
+    },
+    {
+        title_flat: "Квартира-студия_4",
+        description_flat: "Address_4",
+        imageUrls_flat: Object.values(
+            import.meta.glob('../image/img/apartment_5/*.{png,jpg,jpeg,svg}', {
+                eager: true,
+                as: 'url'
+                })
+        )
+    },
+    {
+        title_flat: "Квартира-студия_4",
+        description_flat: "Address_4",
+        imageUrls_flat: Object.values(
+            import.meta.glob('../image/img/apartment_5/*.{png,jpg,jpeg,svg}', {
+                eager: true,
+                as: 'url'
+                })
+        )
     }
 ]

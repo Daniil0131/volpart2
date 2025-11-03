@@ -1,5 +1,8 @@
 
 const card_tpl = document.querySelector("#article_temp");
+const apartment_arrow_button_down_tpl = document.querySelector('.apartment_arrow_button-down-tpl');
+
+
 import { lazy_loading_up } from "./lazy-loading"
 const observer = lazy_loading_up();
 export function template_card(title, description, imageArr, where) {
@@ -22,4 +25,8 @@ export function template_card(title, description, imageArr, where) {
     } else {
         console.warn("template_card: элемент .article не найден внутри шаблона");
     }
+}
+export function button_temp() {
+    
+    
 }
