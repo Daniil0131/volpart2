@@ -18,6 +18,12 @@ export function template_card(title, description, imageArr, where) {
     }
     article_title.textContent = title;
     article_text.textContent = description;
+    const apartment_button = node.querySelector('.article_button');
+    const dialog = node.querySelector('.flatCost');
+    console.log(apartment_button)
+    apartment_button.addEventListener("click", () => {
+        dialog.showModal()
+    })
     node.querySelector(".article")
     where.appendChild(node)
     if (articleRoot) {
@@ -25,6 +31,7 @@ export function template_card(title, description, imageArr, where) {
     } else {
         console.warn("template_card: элемент .article не найден внутри шаблона");
     }
+    
 }
 export function button_temp() {
     

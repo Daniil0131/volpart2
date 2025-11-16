@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const logo = document.querySelector('.header_logo-image');
     const header_title = document.querySelectorAll('.about h2, .about p');
     const apartment_title = document.querySelector('.apartment_title')
-    const apartment_list = document.querySelectorAll('.apartment_list article')
+    const apartment_list = document.querySelectorAll('.apartment_list')
     const apartment = document.querySelectorAll('.apartment')
     const apartment_arrow_button = document.querySelector('.apartment_arrow_button')
     const apartment_add_sect = document.querySelector('.apartment_add-sect');
@@ -97,7 +97,10 @@ document.addEventListener('DOMContentLoaded', () => {
             button.style.display = 'none';
         }
     })
+    
 });
-// 1. Подправить стиль сайта (подробности в гс)
-// 2. Адаптив первой страницы
+
+
+
+
 // 3. Добавить под страницы

@@ -51,7 +51,7 @@
 				<h3 class="apartment_title for_lazy-loading-off">Апартаменты</h3>
 				<ul class="apartment_list">
 					<template id="article_temp">
-						<li loading="lazy" class="list_item">
+						<li class="list_item">
 							<article class="article for_lazy-loading-off">
 								<div class="article_list">
 									<img class="article_list-item" src="" alt="apartment_outside">
@@ -66,9 +66,20 @@
 								</div>
 								<h4 class="article_title"></h4>
 								<p class="article_text"></p>
-								<button class="article_button button">
+								<button class="article_button button" type="button">
 									<span class="button_text">Забронировать</span>
 								</button>
+								<dialog class="flatCost">
+									<div class="dialogCon">
+									<address>
+										<a href="tel:89910238163">8 991 023 81-63</a>
+									</address>
+
+									<form method="dialog">
+										<button class="button" value="ok">Закрыть</button>
+									</form>
+									</div>
+								</dialog> 
 							</article>
 						</li>
 					</template>
