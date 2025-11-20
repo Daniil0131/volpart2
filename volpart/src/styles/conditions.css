@@ -1,0 +1,18 @@
+.conditions_about {
+    background-color: aliceblue;
+    padding: 40px;
+    min-height: 1100px;
+}
+.conditions_about h1 {
+    text-align: center;
+    font-size: 40px;
+}
+.conditions_about p {
+    margin: 20px 0 20px 25px;
+}
+.conditions_about li {
+    margin: 10px 0 10px 42px;
+}
+.footer_link {
+    font-size: 20px;
+}

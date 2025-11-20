@@ -9,10 +9,15 @@ body {
 	margin: 0 auto;
 	font-family: Raleway, sans-serif;
 	border: border-width border-style border-color;
+
+}
+body.preload {
+	visibility: hidden;
 }
 html {
 	height: 100%;
 	overflow-x: hidden;
+	scroll-behavior: smooth;
 }
 h1,
 h2,

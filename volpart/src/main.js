@@ -3,6 +3,7 @@ import './styles/style.css'
 import './styles/root.css'
 import './styles/animated.css'
 import './styles/mobile.css'
+import './styles/conditions.css'
 import './image/background_main.jpg'
 import { lazy_loading_down } from './lazy-loading'
 import { lazy_loading_up } from './lazy-loading'
@@ -10,7 +11,11 @@ import { data_main } from './data/data_card'
 import { template_card } from "./template_card"
 import { data_second } from './data/data_card'
 
+window.addEventListener('load', () => {
+    document.body.classList.remove('preload');
+});
 document.addEventListener('DOMContentLoaded', () => {
+    
     const logo = document.querySelector('.header_logo-image');
     const header_title = document.querySelectorAll('.about h2, .about p');
     const apartment_title = document.querySelector('.apartment_title')
